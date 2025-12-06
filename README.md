@@ -2,113 +2,115 @@
 
 ## Overview
 
-A comprehensive Retail Sales Management System built for the TruEstate SDE Intern Assignment. This application demonstrates essential software engineering capabilities with advanced Search, Filtering, Sorting, and Pagination functionalities. The system is designed with clean, maintainable, and modular architecture following professional coding standards.
+The Retail Sales Management System is a fully functional web application built as part of the TruEstate SDE Intern assignment. It focuses on delivering clean, modular, and scalable front-end architecture with seamless integration of Search, Filtering, Sorting, and Pagination. The project highlights practical UI engineering skills and efficient client‑side data handling.
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **UI Components:** shadcn/ui (Radix UI primitives)
-- **State Management:** React Hooks (useState, useMemo, useCallback)
-- **Icons:** Lucide React
-- **Deployment:** Vercel
+* **Framework:** Next.js 15 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS v4
+* **UI Library:** shadcn/ui (Radix UI)
+* **State Management:** React Hooks (useState, useMemo, useCallback)
+* **Icons:** Lucide React
+* **Deployment:** Vercel
 
 ## Search Implementation Summary
 
-The search functionality provides full-text search across Customer Name and Phone Number fields:
-
-- **Case-insensitive matching:** All searches are performed in lowercase for consistent results
-- **Debounced input:** 300ms debounce prevents excessive re-renders during typing
-- **Multi-field search:** Searches across both Customer Name and Phone Number simultaneously
-- **State preservation:** Search state is maintained alongside active filters and sorting
-- **Reset on change:** Pagination resets to page 1 when search query changes
+* Supports full‑text search on **Customer Name** and **Phone Number**.
+* **Case‑insensitive** matching ensures consistent and predictable results.
+* Uses **300ms debounce** to avoid unnecessary re-renders while typing.
+* Works in combination with active filters and sorting.
+* Resets pagination to page 1 whenever the search query changes.
 
 ## Filter Implementation Summary
 
-Multi-select and range-based filtering is implemented for the following fields:
+Filtering system supports multiple independent and combined filters:
 
-- **Customer Region:** Multi-select dropdown with all available regions
-- **Gender:** Multi-select filter (Male/Female)
-- **Age Range:** Slider-based range filter with min/max values
-- **Product Category:** Multi-select dropdown for product categories
-- **Tags:** Multi-select filter for product tags
-- **Payment Method:** Multi-select dropdown (Credit Card, Debit Card, Cash, UPI, etc.)
-- **Date Range:** Date picker for start and end date filtering
+* **Customer Region:** Multi-select dropdown
+* **Gender:** Multi-select (Male/Female)
+* **Age Range:** Range slider (min–max)
+* **Product Category:** Multi-select dropdown
+* **Tags:** Multi-select
+* **Payment Method:** Multi-select (UPI, Cash, Card, etc.)
+* **Date Range:** Start and end date selection
 
-**Filter Features:**
-- Filters work independently and in combination
-- All filter states are preserved alongside search and sorting
-- Clear all filters button for quick reset
-- Active filter count displayed in UI
-- Pagination resets when filters change
+### Additional Filter Features
+
+* All filters work individually or in combination.
+* UI shows the count of active filters.
+* "Clear All Filters" feature resets all filters in one click.
+* Search, sorting, and pagination states remain preserved.
+* Pagination resets upon any filter update.
 
 ## Sorting Implementation Summary
 
-Sorting is implemented for the following fields with preservation of active search and filters:
+Sorting is implemented with support for:
 
-- **Date (Newest First / Oldest First):** Sorts by transaction date
-- **Quantity (High to Low / Low to High):** Sorts by quantity sold
-- **Customer Name (A-Z / Z-A):** Alphabetical sorting by customer name
+* **Date:** Newest → Oldest / Oldest → Newest
+* **Quantity:** High → Low / Low → High
+* **Customer Name:** A → Z / Z → A
 
-**Sorting Features:**
-- Single-select dropdown for sort option
-- Default sort: Date (Newest First)
-- Preserves active search query and all filters
-- Pagination resets when sort option changes
+### Sorting Features
+
+* Single-select dropdown for selecting sort order.
+* Default sorting is **Date (Newest First)**.
+* Preserves active search and filter state.
+* Pagination resets whenever sorting changes.
 
 ## Pagination Implementation Summary
 
-Pagination is implemented with the following specifications:
-
-- **Page Size:** 10 items per page
-- **Navigation:** Previous/Next buttons with page number display
-- **State Preservation:** Retains active search, filter, and sort states across page changes
-- **Edge Handling:** Disabled buttons when on first/last page
-- **Total Display:** Shows current range and total items (e.g., "1-10 of 500")
+* **Page Size:** 10 records per page
+* Previous/Next navigation with disabled boundary controls
+* Displays range and total items (e.g., *1–10 of 500*)
+* Maintains search, filter, and sorting state across page navigation
+* Handles edge cases gracefully (first/last page)
 
 ## Setup Instructions
 
 ### Prerequisites
 
-- Node.js 18.x or higher
-- npm or yarn package manager
+* Node.js 18+
+* npm or yarn
 
-### Installation
+### Installation Steps
 
 1. Clone the repository:
-   \`\`\`bash
+
+   ```bash
    git clone <repository-url>
    cd retail-sales-management
-   \`\`\`
+   ```
 
 2. Install dependencies:
-   \`\`\`bash
+
+   ```bash
    npm install
    # or
    yarn install
-   \`\`\`
+   ```
 
-3. Run the development server:
-   \`\`\`bash
+3. Start the development server:
+
+   ```bash
    npm run dev
    # or
    yarn dev
-   \`\`\`
+   ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open the app at:
+   **[http://localhost:3000](http://localhost:3000)**
 
 ### Build for Production
 
-\`\`\`bash
+```bash
 npm run build
 npm start
-\`\`\`
+```
 
 ### Deployment
 
-The application is deployed on Vercel. To deploy your own instance:
+To deploy on Vercel:
 
-1. Push the code to a GitHub repository
-2. Connect the repository to Vercel
-3. Deploy with default Next.js settings
+1. Push the project to GitHub.
+2. Import the repository into Vercel.
+3. Deploy using default Next.js settings.
